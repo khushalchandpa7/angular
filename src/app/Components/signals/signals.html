@@ -1,0 +1,32 @@
+<!-- Writable Signals -->
+<h1 style="text-align: center">Writable Signal</h1>
+<div class="counter" style="margin-bottom: 5rem">
+  <h2 style="text-align: center">{{ count() }}</h2>
+  <div class="btns" style="text-align: center">
+    <button (click)="decCount()">➖</button>
+    <button (click)="resetCount()">Reset</button>
+    <button (click)="incCount()">➕</button>
+  </div>
+</div>
+
+<ul>
+  <h2>Users</h2>
+  @for (name of names(); track name) {
+    <li>{{ name }}</li>
+  }
+</ul>
+<button (click)="addNewName()">Add New Name</button>
+
+<!-- Computed Signals -->
+<div style="text-align: center" class="computed-signal">
+  <h1>Computed Signal</h1>
+  <h2>Length : {{ length() }}</h2>
+  <h2>Breadth : {{ breadth() }}</h2>
+  <h2>Arear = {{ area() }}</h2>
+</div>
+
+<!-- Practice Question -->
+<form action="#">
+  <input (input)="setValue($event)" type="text" placeholder="Enter Name..." />
+</form>
+<h4>Input Value : {{ value() }}</h4>

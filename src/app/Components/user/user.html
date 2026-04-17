@@ -1,0 +1,8 @@
+<button [class]="class()" [disabled]="!isValidUserId()" (click)="saveChanges($event)">
+  Save Changes
+</button>
+@if (isValidUserId()) {
+  <h1>User is Valid.</h1>
+} @else {
+  <h1>Invalid User!</h1>
+}

@@ -1,0 +1,7 @@
+:host {
+  min-height: calc(100dvh - 5rem);
+  display: block;
+  /* border-left: 1px solid #000; */
+  /* border-right: 1px solid #000; */
+}
+

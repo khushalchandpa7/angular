@@ -1,0 +1,27 @@
+@if (isLogin()) {
+  <h1>Welcome, User!</h1>
+  <br />
+  <button id="logout-btn" (click)="authenticateUser()">Logout</button>
+} @else {
+  <h1>Please Login!</h1>
+  <br />
+  <button id="login-btn" (click)="authenticateUser()">Login</button>
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<select (change)="showHobby($event)" name="hobbies">
+  <option value="volleyball">Volleyball</option>
+  <option value="cricket">Cricket</option>
+  <option value="basketball">Basketball</option>
+  <option value="badminton">Badminton</option>
+</select>
+
+@if (value()) {
+  <p>I love to play {{ value().toUpperCase() }}.</p>
+} @else {
+  <p>I love to play VOLLEYBALL.</p>
+}

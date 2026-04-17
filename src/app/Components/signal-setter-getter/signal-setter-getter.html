@@ -1,0 +1,11 @@
+<h1>Setter Getter for Signal</h1>
+<input type="text" placeholder="Enter Your Username..." [(ngModel)]="username" />
+
+<br />
+
+Username :
+@if (username()) {
+  {{ username() }}
+} @else {
+  <span>No User Found!</span>
+}

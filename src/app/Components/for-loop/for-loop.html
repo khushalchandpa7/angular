@@ -1,0 +1,17 @@
+<h1>ForLoop Component</h1>
+<!-- It provides some variables to access the data from the for loop like :- $index, $first, $last. $odd, $even, $count. -->
+<!-- 1. $index :- Retunst the index of the current element. -->
+<!--
+  2. $first :- Returnst 'true' if the value is first from the list of array/object, otherwise 'false'.
+-->
+<!-- 3. $first :- Returnst 'true' if the value is last from the list of array/object, otherwise 'false'. -->
+@for (user of users(); track user.id) {
+  @if ($first) {
+    <p style="color: green">Admin : {{ user.name }}</p>
+  } @else if ($last) {
+    <span style="color: orange">Guest : {{ user.name }}<br /></span>
+  } @else {
+    <span>{{ $index }} {{ user.name }}<br /></span>
+  }
+}
+

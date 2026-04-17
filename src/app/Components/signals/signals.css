@@ -1,0 +1,26 @@
+.btns button {
+  background-color: transparent;
+  padding: 0.3em;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: all 0.05s ease-out;
+}
+
+.btns button:active {
+  background-color: #f4f4f4;
+}
+
+.btns > button:nth-child(2n + 1) {
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.btns > button:nth-child(2) {
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.35rem 0.75rem;
+}

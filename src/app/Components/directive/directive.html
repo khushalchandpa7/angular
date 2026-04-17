@@ -1,0 +1,36 @@
+<!-- 1. Component Directive :- Component itself is a Directive. -->
+
+<h1>Structural Directives</h1>
+<!-- i). *ngIf -->
+<h2>*ngIf :</h2>
+<p *ngIf="isLogin()">Welcome User</p>
+
+<!-- ii). *ngFor -->
+<h2>*ngFor</h2>
+<ol *ngFor="let user of users(); let i = index; let cnt = count">
+  <span>{{ i + 1 }}. {{ user.username }}</span>
+</ol>
+
+<!-- 2. Attribute Directives -->
+<h2>Attribute Directives</h2>
+
+<!--
+    i). [ngClass] :- It is used to add / remove classes from the elements.
+-->
+<h3 [ngClass]="{ 'special-txt': isSpecialTxt(), 'regular-txt': !isSpecialTxt() }">
+  [ngClass] Directive
+</h3>
+
+<!--
+    ii). [ngStyle] :- Used to add the inline styling on the element.
+-->
+<h3 [ngStyle]="{ color: color(), 'background-color': bgColor() }">[ngStyle] Directive</h3>
+
+<!--
+    iii). [(ngModel)] :- It is mostly used for two way data binding. If the input field changes then the property/signal also changes related to it and when the property/signal changes it changes the input field value.
+ -->
+<h2>Username : {{ user() }}</h2>
+<form action="#" (submit)="handleSubmit($event)">
+  <!-- When using <input /> field inside the form element 'name' attribute is necessary. -->
+  <input type="text" name="userNuNaam" [(ngModel)]="user" />
+</form>

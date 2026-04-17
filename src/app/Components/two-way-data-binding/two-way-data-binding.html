@@ -1,0 +1,8 @@
+<h1>KG to LBS</h1>
+<label for="kg">KGS</label>
+&nbsp;
+<input type="number" placeholder="Enter KG" [(ngModel)]="kg" (ngModelChange)="kgToLbs($event)" />
+<br /><br />
+<label for="lbs">LBS</label>
+&nbsp;
+<input type="number" placeholder="Enter LBS" [ngModel]="lbs" (ngModelChange)="lbsToKg($event)" />

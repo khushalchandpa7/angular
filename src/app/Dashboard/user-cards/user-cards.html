@@ -1,0 +1,21 @@
+@for (user of userInfo(); track user) {
+  <div class="user-card">
+    <div class="card-header">
+      <div class="avatar">{{ user.username.charAt(0).toUpperCase() }}</div>
+      <div class="header-info">
+        <h2>{{ user.username }}</h2>
+        <span class="user-badge">User</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="info-group">
+        <span class="info-label">Full Name</span>
+        <p class="info-value">{{ user.firstName }} {{ user.lastName }}</p>
+      </div>
+      <div class="info-group">
+        <span class="info-label">Email</span>
+        <p class="info-value">{{ user.email }}</p>
+      </div>
+    </div>
+  </div>
+}

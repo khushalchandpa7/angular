@@ -1,0 +1,12 @@
+input {
+  width: 15rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid lightskyblue;
+}

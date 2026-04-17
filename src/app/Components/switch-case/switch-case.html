@@ -1,0 +1,20 @@
+<div class="admin-dash">
+  @switch (userRole()) {
+    @case ('viewer') {
+      <span class="badge viewer">Viewer</span>
+    }
+    @case ('editor') {
+      <span class="badge editor">Editor</span>
+    }
+    @case ('admin') {
+      <span class="badge admin">Admin</span>
+    }
+    @default {
+      <span class="badge unknown">Unknown User</span>
+    }
+  }
+  <br />
+  <button class="badge viewer" (click)="updateUserRole('viewer')">Viewer</button>
+  <button class="badge editor" (click)="updateUserRole('editor')">Editor</button>
+  <button class="badge admin" (click)="updateUserRole('admin')">Admin</button>
+</div>

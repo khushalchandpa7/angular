@@ -1,0 +1,19 @@
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #fff;
+  margin: 1rem;
+}
+.admin {
+  background-color: red;
+}
+.editor {
+  background-color: blue;
+}
+.viewer {
+  background-color: green;
+}
+.unknown {
+  background-color: gray;
+}

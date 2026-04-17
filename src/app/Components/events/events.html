@@ -1,0 +1,116 @@
+<!-- Click Event -->
+<h1>Click Event Component</h1>
+<button (click)="clickEvent()">Click Me!</button>
+<br />
+
+<!-- Double Click -->
+<button (dblclick)="dblClick()">Double Click Me!</button>
+<br />
+<br />
+
+<!-- Key Press Event -->
+<input (keyup.enter)="keyPress()" placeholder="Name" type="text" />
+<br />
+<br />
+
+<h1>preventDefault();</h1>
+<a href="https://www.google.com" target="_blank" (click)="blockDefaultBehaviour($event)"
+  >Image
+  <img src="../../assets/khushal.png" alt="My Image" />
+</a>
+<br />
+<br />
+
+<!-- Submit Event  -->
+<br />
+<br />
+<h1>Login Form</h1>
+<form (submit)="handleSubmit($event)" action="#">
+  <input type="text" name="username" placeholder="Username..." />
+  <br />
+  <input type="password" name="pass" placeholder="Password..." />
+  <br />
+  <button type="submit">Submit Form</button>
+</form>
+
+<div id="showData">
+  <p>
+    <strong>Username: </strong>
+    @if (username()) {
+      <span>{{ username() }}</span>
+    } @else {
+      <span>No User!</span>
+    }
+    <br />
+    <strong>Password: </strong>
+
+    @if (password()) {
+      <span>{{ password() }}</span>
+    } @else {
+      <span>No User!</span>
+    }
+  </p>
+</div>
+<br />
+<br />
+
+<!-- Change Event -->
+<select (change)="handleChange($event)" name="games">
+  <option value="volleyball">Volley-Ball</option>
+  <option value="basketball">Basket-Ball</option>
+  <option value="cricket">Bat-Ball</option>
+</select>
+
+<br />
+<br />
+<br />
+
+<!-- Focus & Blur(Focus-Out) Event -->
+<label>
+  <input
+    (focus)="handleFocus($event)"
+    (blur)="handleBlur($event)"
+    type="text"
+    placeholder="Enter Your Favourite Place Name..."
+  />
+</label>
+
+<br />
+<br />
+
+<!-- Mouse-Enter & Mouse-Out Event -->
+<div
+  (mouseenter)="handleMouseEvent($event.type)"
+  (mouseout)="handleMouseEvent($event.type)"
+  (mousemove)="handleMouseEvent($event.type)"
+  style="height: 200px; width: 200px; background-color: lightseagreen"
+></div>
+
+<br />
+<br />
+
+<!-- Practice Question-1 -->
+<h3>Range between 1 to 7 :-</h3>
+<button type="button" (click)="updateCount('-')">➖</button>
+&nbsp;
+<span>{{ count }}</span>
+&nbsp;
+<button type="button" (click)="updateCount('+')">➕</button>
+<br />
+<br />
+
+<!-- Practice Question-2 -->
+<input
+  type="text"
+  #newCount
+  placeholder="Enter Characters..."
+  (input)="charCount.set(newCount.value.length)"
+/>
+<p>Characters : {{ charCount() }}</p>
+<button (click)="newCount.value = ''; charCount.set(0)">Clear</button>
+
+<br />
+<br />
+
+<!-- Image -->
+<img width="200" [src]="imgUrl" />

@@ -1,0 +1,10 @@
+.video {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.video-screen {
+  border-radius: 10px;
+  width: 30rem;
+}

@@ -1,0 +1,17 @@
+<!-- <h1>Parent Counter : {{ parentCounter() }}</h1>
+<app-inner [(count)]="parentCounter" />
+<button type="reset" (click)="parentCounter.set(0)">Reset</button> -->
+
+<!-- <strong>Update Email : </strong>
+<input spellcheck="false" type="email" placeholder="Enter New Email" [(ngModel)]="parenEmail" />
+<br />
+<br />
+<app-inner [(email)]="parenEmail" /> -->
+
+<div style="padding: 20px; background: #f0f0f0">
+  <h2>Parent Dashboard (USD)</h2>
+  <p>Total Budget: ${{ budgetUsd() }}</p>
+
+  <hr />
+  <app-inner [(usd)]="budgetUsd"></app-inner>
+</div>

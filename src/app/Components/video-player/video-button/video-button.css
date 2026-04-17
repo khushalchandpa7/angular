@@ -1,0 +1,10 @@
+#video-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: green;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 7px;
+}

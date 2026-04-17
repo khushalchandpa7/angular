@@ -1,0 +1,20 @@
+.user {
+  text-align: center;
+  color: #fff;
+  opacity: 0.5;
+  background-color: green;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 7px;
+}
+
+.user:hover {
+  text-align: center;
+  color: #fff;
+  opacity: 1;
+  background-color: green;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 7px;
+  cursor: pointer;
+}

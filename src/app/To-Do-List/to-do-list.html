@@ -1,0 +1,27 @@
+<h1>To-Do List</h1>
+
+<form action="#" method="post" (submit)="handleSubmit($event)">
+  <label for="task-input"></label>
+  <input spellcheck="false" type="text" id="task-input" placeholder="Enter Your Task" />
+
+  <button (click)="addTask($event)" id="add-task-btn">Add Task</button>
+</form>
+
+<br /><br />
+
+<div class="tasks-container">
+  <ol style="list-style: none" class="tasks">
+    @for (task of tasks(); track task.id) {
+      <li>
+        <span class="task-text">{{ $index + 1 }}. {{ task.taskTitle }}</span>
+        <button (click)="upperCaseTask(task.id, task.taskTitle)">Uppercase</button>
+        <button (click)="lowerCaseTask(task.id, task.taskTitle)">Lowercase</button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    } @empty {
+      <h1>No Tasks Found!!!</h1>
+    }
+    <button (click)="upperCaseAllTask($event)">Upper Case All</button>
+    <button (click)="lowerCaseAllTask($event)">Lower Case All</button>
+  </ol>
+</div>

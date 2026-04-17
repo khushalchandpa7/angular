@@ -1,0 +1,7 @@
+<button [class]="class()" (click)="cancelSubscription($event)">Cancel Subscription</button>
+
+@if (isAdmin()) {
+  <h1>Admin Settings...</h1>
+} @else {
+  <h1>User Settings...</h1>
+}
