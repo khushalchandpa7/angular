@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GlobalState } from './global-state';
+import { Pipes } from './pipes';
 
-describe('GlobalState', () => {
-  let component: GlobalState;
-  let fixture: ComponentFixture<GlobalState>;
+describe('Pipes', () => {
+  let component: Pipes;
+  let fixture: ComponentFixture<Pipes>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GlobalState],
+      imports: [Pipes],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GlobalState);
+    fixture = TestBed.createComponent(Pipes);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,4 +1,6 @@
 import { Component, signal } from '@angular/core';
+import { DisplayCount } from './Components/global-state/display-count/display-count';
+import { UpdateCount } from './Components/global-state/update-count/update-count';
 // import { Calculator } from './Components/calculator/calculator';
 // import { ForLoop } from './Components/for-loop/for-loop';
 // import { Parent } from './Components/parent/parent';
@@ -20,7 +22,7 @@ import { Component, signal } from '@angular/core';
 // import { Directive } from './Components/directive/directive';
 // import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
 // import { GreetingUser } from './ChildToParent/greeting-user/greeting-user';
-import { ParentComp } from './Components/child-to-parent/parent-comp/parent-comp';
+// import { ParentComp } from './Components/child-to-parent/parent-comp/parent-comp';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +40,8 @@ import { ParentComp } from './Components/child-to-parent/parent-comp/parent-comp
   // imports: [Directive],
   // imports: [UserDashboard],
   // imports: [GreetingUser],
-  imports: [ParentComp],
+  // imports: [ParentComp],
+  imports: [DisplayCount, UpdateCount],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
