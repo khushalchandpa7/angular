@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, signal, Input, Output, WritableSignal, EventEmitter } from '@angular/core';
 
 type UserData = {
   id: number;
@@ -14,5 +14,5 @@ type UserData = {
   styleUrl: './user-cards.css',
 })
 export class UserCard {
-  userInfo = input<UserData[]>([]);
+  @Input() users?: UserData[];
 }

@@ -8,6 +8,10 @@ import { UserCard } from '../user-cards/user-cards';
   styleUrl: './user-dashboard.css',
 })
 export class UserDashboard {
+  handleChildData(names: any) {
+    console.log(`Tridev : ${names()}`);
+  }
+
   userData = signal([
     {
       id: 1,
@@ -41,8 +45,15 @@ export class UserDashboard {
       id: 5,
       firstName: 'Mavis',
       lastName: 'Schultz',
-      email: 'kmeus4@upenn.edu',
-      username: 'kmeus4',
+      email: 'meus4@upenn.edu',
+      username: 'meus4',
+    },
+    {
+      id: 6,
+      firstName: 'Khushal',
+      lastName: 'Chandpa',
+      email: 'khushalchandpa7@gmail.com',
+      username: 'khuushaal_369',
     },
   ]);
 }

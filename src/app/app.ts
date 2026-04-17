@@ -18,7 +18,9 @@ import { Component, signal } from '@angular/core';
 // import { Outer } from './Components/input-property/outer/outer';
 // import { ToDoList } from './To-Do-List/to-do-list';
 // import { Directive } from './Components/directive/directive';
-import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
+// import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
+// import { GreetingUser } from './ChildToParent/greeting-user/greeting-user';
+import { ParentComp } from './Components/child-to-parent/parent-comp/parent-comp';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +36,9 @@ import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
   // imports: [Outer],
   // imports: [ToDoList],
   // imports: [Directive],
-  imports: [UserDashboard],
+  // imports: [UserDashboard],
+  // imports: [GreetingUser],
+  imports: [ParentComp],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -15,23 +15,23 @@ interface Task {
 export class ToDoList implements OnInit {
   tasks = signal<Task[]>([]);
 
-  ngOnInit() {
+  ngOnInit(): void {
     let allFetchedTasks = localStorage.getItem('to-do-tasks');
     if (allFetchedTasks) {
       this.tasks.set(JSON.parse(allFetchedTasks));
     }
   }
 
-  handleSubmit(evt: any) {
+  handleSubmit(evt: any): void {
     evt.preventDefault();
     evt.target[0].value = '';
   }
 
-  saveToDB(data: object) {
+  saveToDB(data: object): void {
     localStorage.setItem('to-do-tasks', JSON.stringify(data));
   }
 
-  addTask(evt: any) {
+  addTask(evt: any): void {
     let taskVal = evt.srcElement.previousElementSibling.value;
     if (!taskVal.trim()) return;
     this.tasks.update((prevTasks) => {
@@ -41,7 +41,7 @@ export class ToDoList implements OnInit {
     });
   }
 
-  deleteTask(id: string) {
+  deleteTask(id: string): void {
     this.tasks.update((prevAllTask) => {
       let filteredTasks = prevAllTask.filter((prevTask) => {
         return prevTask.id !== id;
@@ -51,7 +51,7 @@ export class ToDoList implements OnInit {
     });
   }
 
-  upperCaseTask(id: string, taskTitle: string) {
+  upperCaseTask(id: string, taskTitle: string): void {
     this.tasks.update((prevAllTask) => {
       let upperCaseTasks = prevAllTask.map((prevTask) => {
         return prevTask.id === id ? { ...prevTask, taskTitle: taskTitle.toUpperCase() } : prevTask;
@@ -61,7 +61,7 @@ export class ToDoList implements OnInit {
     });
   }
 
-  lowerCaseTask(id: string, taskTitle: string) {
+  lowerCaseTask(id: string, taskTitle: string): void {
     this.tasks.update((prevAllTask) => {
       let lowerCaseTasks = prevAllTask.map((prevTask) => {
         return prevTask.id === id ? { ...prevTask, taskTitle: taskTitle.toLowerCase() } : prevTask;
@@ -71,7 +71,7 @@ export class ToDoList implements OnInit {
     });
   }
 
-  upperCaseAllTask(evt: any) {
+  upperCaseAllTask(evt: any): void {
     this.tasks.update((prevAllTask) => {
       let allUpperCaseTasks = prevAllTask.map((prevTask, idx) => {
         let elementValue = evt.target.parentElement.children[idx].innerText;
@@ -83,7 +83,7 @@ export class ToDoList implements OnInit {
     });
   }
 
-  lowerCaseAllTask(evt: any) {
+  lowerCaseAllTask(evt: any): void {
     this.tasks.update((prevAllTask) => {
       let allLowerCaseTasks = prevAllTask.map((prevTask, idx) => {
         let elementValue = evt.target.parentElement.children[idx].innerText;

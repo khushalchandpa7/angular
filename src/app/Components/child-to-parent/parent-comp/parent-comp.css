@@ -1,0 +1,28 @@
+:host {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 1rem;
+}
+
+.parent-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 400px;
+}
+
+.header-banner h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  font-weight: normal;
+}
+
+.highlight {
+  font-weight: bold;
+}

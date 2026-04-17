@@ -1,0 +1,70 @@
+.child-container {
+  margin-top: 1rem;
+}
+
+.user-form {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.user-input {
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.add-btn svg {
+  display: none;
+}
+
+.users-list {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.empty-state {
+  color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.user-info {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.action-btn:hover {
+  background: #f0f0f0;
+}

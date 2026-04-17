@@ -1,0 +1,10 @@
+<div class="parent-container">
+  <div class="header-banner">
+    <h2>Selected User: <span class="highlight">{{ selectUserName() || 'None' }}</span></h2>
+  </div>
+  <app-child-comp
+    (selectedUsers)="handleUsers($event)"
+    (selectUserIdx)="handleSelectedUser($event)"
+    (deleteUserIdx)="handleDeleteUser($event)"
+  />
+</div>

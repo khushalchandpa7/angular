@@ -1,0 +1,28 @@
+<div class="child-container">
+  <form class="user-form" action="#" method="post" (submit)="handleSubmit($event)">
+    <input class="user-input" type="text" name="userName" placeholder="Your Beautiful Name..." />
+    <button class="add-btn" (click)="handleClick($event)">Add User</button>
+  </form>
+
+  <div class="users-list">
+    @if (users().length === 0) {
+      <div class="empty-state">No users added !</div>
+    }
+    @for (user of users(); track user) {
+      <div class="user-card">
+        <div class="user-info">
+          <span class="user-index">{{ $index + 1 }}</span>
+          <span class="user-name">{{ user }}</span>
+        </div>
+        <div class="user-actions">
+          <button class="action-btn select-btn" (click)="handleSelectUserClick($index)">
+            Select
+          </button>
+          <button class="action-btn delete-btn" (click)="handleDeleteUserClick($index)">
+            Delete
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
