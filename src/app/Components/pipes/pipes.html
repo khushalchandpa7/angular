@@ -1,0 +1,135 @@
+<h1 style="font-weight: 600">Pipes - uppercase, titlecase, currency, date, json</h1>
+<br />
+<div>
+  <input
+    type="text"
+    placeholder="Enter Full Name"
+    style="
+      width: 15rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #000;
+      border-radius: 7px;
+      outline: none;
+      font-size: 1rem;
+    "
+    (input)="fullName.set($event.target.value)"
+    spellcheck="false"
+  />
+</div>
+<br />
+
+<!-- 1. titlecase -->
+<h2>
+  <span style="font-weight: 100">1. titlecase :- </span>
+  <strong>{{ fullName() | titlecase }}</strong>
+</h2>
+<br />
+<br />
+
+<!-- 2. uppercase -->
+<h2>
+  <span style="font-weight: 100">2. uppercase :- </span>
+  <strong>{{ fullName() | uppercase }}</strong>
+</h2>
+<br />
+<br />
+
+<!-- 3. lowercase -->
+<h2>
+  <span style="font-weight: 100">3. lowercase :- </span>
+  <strong>{{ fullName() | lowercase }}</strong>
+</h2>
+<br />
+<br />
+
+<!-- 4. currency -->
+<p style="font-size: 1.5rem">4. currency :-</p>
+<h2>
+  <span>
+    INR : <strong>{{ amount() | currency: 'INR' }}</strong>
+  </span>
+</h2>
+<h2>
+  <span>
+    USD : <strong>{{ amount() | currency: 'USD' }}</strong>
+  </span>
+</h2>
+<h2>
+  <span>
+    EURO : <strong>{{ amount() | currency: 'EUR' }}</strong>
+  </span>
+</h2>
+<h2>
+  <span>
+    JPY : <strong>{{ amount() | currency: 'JPY' }}</strong>
+  </span>
+</h2>
+<br />
+
+<!-- 5. date -->
+<span style="font-size: 1.5rem">5. date :- </span>
+<br />
+<span style="font-size: 1.5rem">
+  Full Date :
+  <strong>{{ today() | date: 'fullDate' }}</strong>
+</span>
+<br />
+<span style="font-size: 1.5rem">
+  Short :
+  <strong>{{ today() | date: 'short' }}</strong>
+</span>
+<br />
+<span style="font-size: 1.5rem">
+  Short Date :
+  <strong>{{ today() | date: 'shortDate' }}</strong>
+</span>
+<br />
+<span style="font-size: 1.5rem">
+  Custom Date :
+  <strong>{{ today() | date: 'dd-MM-yyyy' }}</strong>
+</span>
+<br />
+<br />
+
+<!-- percent -->
+<p style="font-size: 1.5rem">6. percent :-</p>
+
+<span style="font-size: 1.5rem">
+  Percentage :
+  <strong>{{ percent() | percent }}</strong>
+</span>
+<br />
+<br />
+<!-- json -->
+<p style="font-size: 1.5rem">7. json :-</p>
+
+<span style="font-size: 1.5rem">
+  JSON :
+  <strong>{{ user | json }}</strong>
+</span>
+
+<br /><br />
+<hr />
+<br />
+
+<!-- Custom Pipes -->
+<h1>Custom Pipes</h1>
+
+<!-- 1. textTrim -->
+<h2 style="font-weight: 100">1. textTrim :-</h2>
+<h2 style="font-weight: 100">Normal Text : {{ text() }}</h2>
+<h2 style="font-weight: 100">Trimmed Text : {{ text() | textTrim }}</h2>
+<h2 style="font-weight: 100">Trimmed Text : {{ text() | textTrim: 7 }}</h2>
+<br />
+<!-- 2. replaceText -->
+<h2 style="font-weight: 100">2. replaceText :-</h2>
+<h2 style="font-weight: 100">Normal String : {{ text() }}</h2>
+<h2 style="font-weight: 100">
+  Replaced String : {{ text() | replaceText: 'Khushal' : 'Khuushaal' }}
+</h2>
+<br />
+<!-- 3. addCurr -->
+<h2 style="font-weight: 100">3. addCurrSymbol :-</h2>
+<h2 style="font-weight: 100">Amount : {{ amount() }}</h2>
+<h2 style="font-weight: 100">Amt with Default Currency : {{ amount() | addCurr }}</h2>
+<h2 style="font-weight: 100">Amt with Japanese Yen : {{ amount() | addCurr: 'JPY' }}</h2>

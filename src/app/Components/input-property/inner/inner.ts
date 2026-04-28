@@ -1,4 +1,4 @@
-import { Component, model, ModelSignal } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,13 +15,13 @@ export class Inner {
 
   email = model('default@example.com');
 
-  usd = model(0);
+  // usd = model(0);
 
-  get euroValue(): number {
-    return this.usd() * 0.8475;
-  }
+  // get euroValue(): number {
+  //   return this.usd() * 0.8475;
+  // }
 
-  set euroValue(val: number) {
-    this.usd.set(val / 0.8475);
-  }
+  // set euroValue(val: number) {
+  //   this.usd.set(val / 0.8475);
+  // }
 }

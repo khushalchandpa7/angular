@@ -1,0 +1,55 @@
+<h1 style="text-align: center; text-decoration: underline">Reactive Forms</h1>
+<br />
+<form (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+  <div class="user-name">
+    <label for="uname">Username </label>
+    <input type="text" id="uname" placeholder="Username" formControlName="username" />
+  </div>
+  <br />
+  <div class="password">
+    <label for="pass">Password </label>
+    <input type="password" id="pass" placeholder="Password" formControlName="password" />
+  </div>
+  <br />
+  <section class="address" formGroupName="address">
+    <div class="state">
+      <label for="state">Select Your State </label>
+      <select id="state" name="states" formControlName="state">
+        <option value="" disabled>Choose Your State</option>
+        @for (state of stateOptions(); track state) {
+          <option value="{{ state }}">{{ state }}</option>
+        }
+      </select>
+      <br /><br />
+    </div>
+    <div class="city">
+      <label for="city">City </label>
+      <input type="text" placeholder="City" id="city" formControlName="city" />
+    </div>
+    <br />
+    <div class="zip-code">
+      <label for="zip">Zip Code </label>
+      <input type="number" id="zip" placeholder="Zip Code" formControlName="zip" />
+    </div>
+    <br />
+    <section class="contact" formGroupName="contact">
+      <div class="phone-number">
+        <label for="phone">Phone No. </label>
+        <input type="number" id="phone" placeholder="Phone No." formControlName="phoneNo" />
+      </div>
+      <br />
+      <div class="telephone-number">
+        <label for="telephone">Telephone No. </label>
+        <input
+          type="number"
+          id="telephone"
+          placeholder="Telephone No."
+          formControlName="telephoneNo"
+        />
+      </div>
+    </section>
+    <br />
+  </section>
+
+  <button style="width: 100%; padding: 0.5rem 0">Sign Up</button>
+</form>

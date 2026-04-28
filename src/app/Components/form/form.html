@@ -1,0 +1,27 @@
+<h1>Forms</h1>
+<form (ngSubmit)="handleSubmit($event)" [formGroup]="userForm">
+  <div>
+    <label for="username">Username </label>
+    <input
+      formControlName="username"
+      type="text"
+      placeholder="Username"
+      name="userName"
+      required
+      id="username"
+    />
+  </div>
+  <div>
+    <label for="password">Password </label>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      name="passWord"
+      required
+      id="password"
+    />
+  </div>
+  <div id="address"></div>
+  <button (click)="handleLogin()" type="submit">Login</button>
+</form>

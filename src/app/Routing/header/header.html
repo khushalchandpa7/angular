@@ -1,0 +1,43 @@
+<nav>
+  <div class="left-nav">
+    <span id="left-nav-logo">.TechRover</span>
+  </div>
+  <ul class="right-nav">
+    <li>
+      <a routerLinkActive="active" class="btn" routerLink="/home">Home</a>
+    </li>
+    <!-- <li>
+      <a
+        routerLinkActive="active"
+        class="btn"
+        routerLink="/user"
+        [queryParams]="{
+          name: 'Khushal Chandpa V.',
+          role: 'Software Developer',
+          email: 'khushal.c@techroversolutions.com',
+          city: 'Ahmedabad',
+        }"
+      >
+        Profile
+      </a>
+    </li> -->
+    <li>
+      <a class="btn" routerLinkActive="active" routerLink="/login">Login</a>
+    </li>
+    <li>
+      <a class="btn" routerLinkActive="active" routerLink="/signup">Signup</a>
+    </li>
+    <li>
+      <a class="btn" routerLinkActive="active" routerLink="/users">Users</a>
+    </li>
+    <!-- <li>
+      <a [routerLink]="['/product', prodId(), prodName()]" class="btn">ProductName</a>
+    </li> -->
+    <li>
+      <a routerLink="/about" routerLinkActive="active" class="btn">About</a>
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active" class="btn">Contact</a>
+    </li>
+  </ul>
+</nav>

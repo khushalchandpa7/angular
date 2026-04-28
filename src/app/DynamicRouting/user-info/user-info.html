@@ -1,0 +1,25 @@
+<div class="user-card">
+  <div class="card-header">
+    <div class="avatar">
+      {{ userData()[0].id }}
+      <!-- {{
+        userData()[0].firstName.charAt(0).toUpperCase() +
+          userData()[0].lastName.charAt(0).toUpperCase()
+      }} -->
+    </div>
+    <div class="header-info">
+      <h2>{{ userData()[0].firstName }} {{ userData()[0].lastName }}</h2>
+      <span class="user-badge">User</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="info-group">
+      <span class="info-label">Profession</span>
+      <p class="info-value">{{ userData()[0].profession }}</p>
+    </div>
+    <div class="info-group">
+      <span class="info-label">City</span>
+      <p class="info-value">{{ userData()[0].city }}</p>
+    </div>
+  </div>
+</div>

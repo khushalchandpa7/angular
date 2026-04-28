@@ -1,0 +1,61 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.error-content {
+  text-align: center;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #ff6b6b;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -5px;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: #2d3436;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #636e72;
+  max-width: 450px;
+  margin: 0 auto 35px auto;
+  line-height: 1.6;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #0984e3;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: #74b9ff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
+}

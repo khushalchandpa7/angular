@@ -1,0 +1,47 @@
+<button (click)="handleBack()" class="primary-btn">Go Back</button>
+<div class="signup-wrapper">
+  <div class="signup-container">
+    <div class="signup-banner">
+      <div class="banner-content">
+        <h2>Start your journey</h2>
+        <p>Join thousands of users building the future with our platform.</p>
+      </div>
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+    </div>
+
+    <div class="signup-form-section">
+      <div class="signup-header">
+        <h2>Create Account</h2>
+        <p>Sign up in just a few clicks.</p>
+      </div>
+
+      <form class="signup-form" (submit)="handleSubmit($event)">
+        <div class="form-row">
+          <div class="signup-field">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="John" required />
+          </div>
+          <div class="signup-field">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Doe" required />
+          </div>
+        </div>
+
+        <div class="signup-field">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" placeholder="john.doe@example.com" required />
+        </div>
+
+        <div class="signup-field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Min. 8 characters" required />
+        </div>
+
+        <button (click)="goToHome()" type="submit" class="signup-btn">Create Account</button>
+      </form>
+
+      <p class="signup-footer">Already have an account? <a routerLink="/login">Log in here</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- <h1>All Users</h1> -->
+<div class="users-page-container">
+  <div class="users-grid">
+    @for (user of allUsersIdAndName(); track user.id) {
+      <a [routerLink]="['user-info', user.id]" class="user-card">
+        <div class="user-avatar">
+          <img
+            src="https://api.dicebear.com/7.x/avataaars/svg?seed={{ user.name }}"
+            [alt]="user.id"
+          />
+        </div>
+        <div class="user-info">
+          <h3 class="user-name">{{ user.name }}</h3>
+        </div>
+        <div class="user-arrow">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </a>
+    }
+  </div>
+</div>
+
+<router-outlet></router-outlet>

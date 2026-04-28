@@ -1,0 +1,35 @@
+<div class="login-wrapper">
+  <div class="login-container">
+    <div class="login-banner">
+      <div class="banner-content">
+        <h2>Welcome Back</h2>
+        <p>We're so glad to see you again. Log in to continue your journey.</p>
+      </div>
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+    </div>
+
+    <div class="login-form-section">
+      <div class="login-header">
+        <h2>Log In</h2>
+        <p>Access your account securely.</p>
+      </div>
+
+      <form class="login-form" (submit)="handleSubmit($event)">
+        <div class="login-field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="john.doe@example.com" required />
+        </div>
+
+        <div class="login-field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter your password" required />
+        </div>
+
+        <button (click)="goToHome()" type="submit" class="login-btn">Log In</button>
+      </form>
+
+      <p class="login-footer">Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+    </div>
+  </div>
+</div>

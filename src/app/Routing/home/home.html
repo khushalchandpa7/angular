@@ -1,0 +1,26 @@
+<div class="home-container">
+  <header class="hero-section">
+    <div class="hero-content">
+      <span class="badge">Angular Routing Practice</span>
+      @if (!from()) {
+        <h1 class="hero-title">Welcome to Your App</h1>
+      } @else if (from() === 'login') {
+        <h1 class="hero-title">Welcome Back User</h1>
+      } @else {
+        <h1 class="hero-title">Account Created</h1>
+      }
+      <p class="hero-subtitle">
+        Explore the power of Single Page Applications. Navigate seamlessly between views without the
+        browser ever reloading.
+      </p>
+      <div class="action-buttons">
+        <button (click)="handleClick1()" class="secondary-btn">Router Navigate</button>
+        <button (click)="handleLogin()" class="primary-btn">Login</button>
+        <button (click)="handleQueryParams()" class="secondary-btn">Query Params</button>
+
+        <!-- <button class="primary-btn" routerLink="/home">Go to Home</button> -->
+        <!-- <button class="secondary-btn" routerLink="/about">Learn More</button> -->
+      </div>
+    </div>
+  </header>
+</div>

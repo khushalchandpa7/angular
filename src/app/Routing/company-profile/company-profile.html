@@ -1,0 +1,30 @@
+<div class="page-container">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar-placeholder">
+        <span class="initials">{{ firstName().charAt(0).concat(lastName().charAt(0)) }}</span>
+      </div>
+      <h1 class="user-name">{{ firstName().concat(lastName()) }}</h1>
+      <p class="user-role">Angular Developer</p>
+    </div>
+
+    <div class="profile-body">
+      <div class="info-group">
+        <span class="label">Location</span>
+        <span class="value">Ahmedabad, India</span>
+      </div>
+      <div class="info-group">
+        <span class="label">Email</span>
+        <span class="value">khushal.c&#64;techroversolutions.com</span>
+      </div>
+      <div class="info-group">
+        <span class="label">Joined</span>
+        <span class="value">April 2026</span>
+      </div>
+    </div>
+
+    <div class="profile-footer">
+      <button class="back-btn" routerLink="/home">← Back to Dashboard</button>
+    </div>
+  </div>
+</div>

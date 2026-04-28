@@ -1,6 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { DisplayCount } from './Components/global-state/display-count/display-count';
-import { UpdateCount } from './Components/global-state/update-count/update-count';
 // import { Calculator } from './Components/calculator/calculator';
 // import { ForLoop } from './Components/for-loop/for-loop';
 // import { Parent } from './Components/parent/parent';
@@ -23,9 +21,21 @@ import { UpdateCount } from './Components/global-state/update-count/update-count
 // import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
 // import { GreetingUser } from './ChildToParent/greeting-user/greeting-user';
 // import { ParentComp } from './Components/child-to-parent/parent-comp/parent-comp';
+// import { DisplayCount } from './Components/global-state/display-count/display-count';
+// import { UpdateCount } from './Components/global-state/update-count/update-count';
+// import { Pipes } from './Components/pipes/pipes';
+// import { RouterOutlet } from '@angular/router';
+// import { About } from './Routing/about/about';
+// import { Header } from './Routing/header/header';
+// import { ReactiveForms } from './ReactiveForms/reactive-forms';
+import { Form } from './Components/form/form';
 
 @Component({
   selector: 'app-root',
+  // imports: [RouterOutlet],
+  // imports: [ReactiveForms],
+  // imports: [RouterOutlet],
+  imports: [Form],
   // imports: [Outer, VideoPlayer, Calculator, ForLoop, Parent, Profile, ThemeToggler, User, Events],
   // imports: [Navbar, Main],
   // imports: [Signals],
@@ -41,7 +51,9 @@ import { UpdateCount } from './Components/global-state/update-count/update-count
   // imports: [UserDashboard],
   // imports: [GreetingUser],
   // imports: [ParentComp],
-  imports: [DisplayCount, UpdateCount],
+  // imports: [DisplayCount, UpdateCount],
+  // imports: [Pipes],
+  // imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

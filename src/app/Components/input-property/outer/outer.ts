@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Inner } from '../inner/inner';
 
@@ -7,7 +7,11 @@ import { Inner } from '../inner/inner';
   imports: [FormsModule, Inner],
   templateUrl: './outer.html',
 })
-export class Outer {
-  parenEmail = signal('');
-  budgetUsd = signal(100);
+export class Outer implements OnInit {
+  parentEmail = signal('');
+
+  ngOnInit(): void {
+    console.log(this.parentEmail());
+  }
+  // budgetUsd = signal(100);
 }
