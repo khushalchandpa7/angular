@@ -21,10 +21,13 @@ import { Routes } from '@angular/router';
 // import { inject } from '@angular/core';
 // import { Team } from './Routing/user/user';
 import { PageNotFound } from './Routing/page-not-found/page-not-found';
-import { Home } from './Guard/home/home';
-import { Login } from './Guard/login/login';
-import { Dashboard } from './Guard/dashboard/dashboard';
-import { authGuard } from './Guard/guard/auth-guard';
+// import { UserForm } from './Practice Questions/user-form/user-form';
+// import { UserDashboard } from './Practice Questions/user-dashboard/user-dashboard';
+// import { authGuard } from './Practice Questions/guard/auth-guard';
+// import { Home } from './Guard/home/home';
+// import { Login } from './Guard/login/login';
+// import { Dashboard } from './Guard/dashboard/dashboard';
+// import { authGuard } from './Guard/guard/auth-guard';
 // import { Home } from './Routing/home/home';
 // import { RouterNavigate } from './Routing/router-navigate/router-navigate';
 // import { Login } from './Routing/login/login';
@@ -33,11 +36,48 @@ import { authGuard } from './Guard/guard/auth-guard';
 // import { TeamUser } from './Routing/DataRouting/team-user/team-user';
 
 export const routes: Routes = [
-  { path: 'home', component: Home, title: 'Home Page' },
-  { path: 'login', component: Login, title: 'Login Page' },
-  { path: 'dashboard', component: Dashboard, canActivate: [authGuard], title: 'User Dashboard' },
-  { path: '', redirectTo: 'home', pathMatch: 'full', title: 'Home Page' },
-  { path: '**', component: PageNotFound, title: 'Page Not Found!' },
+  // {
+  //   path: 'products',
+  //   loadComponent: () => import('./Practice Questions/products/products').then((c) => c.TodoList),
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: 'products',
+  //   pathMatch: 'full',
+  // },
+
+  // {
+  //   path: 'login',
+  //   component: UserForm,
+  // },
+  // {
+  //   path: 'dashboard',
+  //   component: UserDashboard,
+  //   canActivate: [authGuard],
+  //   children: [
+  //     {
+  //       path: 'profile',
+  //       loadComponent: () =>
+  //         import('./Practice Questions/user-dashboard/user-dashboard').then((c) => c.UserDashboard),
+  //     },
+  //     {
+  //       path: 'settings',
+  //       loadComponent: () =>
+  //         import('./Practice Questions/user-dashboard/user-dashboard').then((c) => c.UserDashboard),
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full',
+  // },z
+
+  // { path: 'home', component: Home, title: 'Home Page' },
+  // { path: 'login', component: Login, title: 'Login Page' },
+  // { path: 'dashboard', component: Dashboard, canActivate: [authGuard], title: 'User Dashboard' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full', title: 'Home Page' },
+  // { path: '**', component: PageNotFound, title: 'Page Not Found!' },
 
   // { path: 'home', component: Home },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },

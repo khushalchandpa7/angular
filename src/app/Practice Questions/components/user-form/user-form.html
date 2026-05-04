@@ -1,0 +1,17 @@
+<form action="#" (submit)="handleSubmit()" [formGroup]="userForm">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username" formControlName="username" placeholder="Your Username" />
+  </div>
+  <div>
+    <label for="pass">Password</label>
+    <input
+      type="password"
+      name="password"
+      id="pass"
+      formControlName="password"
+      placeholder="Your Password"
+    />
+  </div>
+  <button (click)="handleSignupClick()" type="submit">Signup</button>
+</form>

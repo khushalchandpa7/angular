@@ -2,6 +2,9 @@
   display: block;
   height: 100%;
   width: 100%;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   font-family: Glroy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

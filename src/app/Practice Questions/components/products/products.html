@@ -1,0 +1,15 @@
+<h1>Product List</h1>
+<ul>
+  @for (product of productList(); track product.id) {
+    <li>
+      <strong>Product Name: </strong>
+      <span>{{ product.title }}</span>
+
+      <strong>Category: </strong>
+      <span>{{ product.category.toUpperCase() }}</span>
+
+      <img style="width: 300px" [src]="product.images[0]" />
+    </li>
+    <hr />
+  }
+</ul>

@@ -28,14 +28,16 @@ import { Component, signal } from '@angular/core';
 // import { About } from './Routing/about/about';
 // import { Header } from './Routing/header/header';
 // import { ReactiveForms } from './ReactiveForms/reactive-forms';
-import { Form } from './Components/form/form';
+// import { Form } from './Components/form/form';
+import { RouterOutlet } from '@angular/router';
+import { NgContainer } from './Practice Questions/components/ng-container/ng-container';
 
 @Component({
   selector: 'app-root',
-  // imports: [RouterOutlet],
+  // imports: [NgContainer],
+  imports: [RouterOutlet],
   // imports: [ReactiveForms],
   // imports: [RouterOutlet],
-  imports: [Form],
   // imports: [Outer, VideoPlayer, Calculator, ForLoop, Parent, Profile, ThemeToggler, User, Events],
   // imports: [Navbar, Main],
   // imports: [Signals],

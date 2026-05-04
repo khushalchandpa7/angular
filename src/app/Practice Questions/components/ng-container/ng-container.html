@@ -1,0 +1,26 @@
+<h1>'ng-container' Element</h1>
+
+<!-- <ul>
+  <button (click)="isLoggedin.set(true)">All Users Valid</button>
+  <ng-container *ngFor="let name of usernames()">
+    <li *ngIf="isLoggedin()">Username: {{ name }}</li>
+  </ng-container>
+</ul> -->
+
+<ng-container *ngIf="isLightTheme()">
+  <button
+    style="padding: 0.75rem 1rem; background-color: #fff; color: #000; border: 1px solid #000"
+  >
+    Change to Dark
+  </button>
+</ng-container>
+
+<ng-container *ngIf="!isLightTheme()">
+  <button
+    style="padding: 0.75rem 1rem; background-color: #000; color: #fff; border: 1px solid #000"
+  >
+    Change to Light
+  </button>
+</ng-container>
+<br />
+<button (click)="toggleTheme()">Toggle Theme</button>
