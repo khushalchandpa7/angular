@@ -29,13 +29,15 @@ import { Component, signal } from '@angular/core';
 // import { Header } from './Routing/header/header';
 // import { ReactiveForms } from './ReactiveForms/reactive-forms';
 // import { Form } from './Components/form/form';
-import { RouterOutlet } from '@angular/router';
-import { NgContainer } from './Practice Questions/components/ng-container/ng-container';
+// import { RouterOutlet } from '@angular/router';
+// import { NgContainer } from './Practice Questions/components/ng-container/ng-container';
+import { Dashboard } from './Practice Questions/InputOutput/components/dashboard/dashboard';
 
 @Component({
   selector: 'app-root',
   // imports: [NgContainer],
-  imports: [RouterOutlet],
+  // imports: [RouterOutlet],
+  imports: [Dashboard],
   // imports: [ReactiveForms],
   // imports: [RouterOutlet],
   // imports: [Outer, VideoPlayer, Calculator, ForLoop, Parent, Profile, ThemeToggler, User, Events],

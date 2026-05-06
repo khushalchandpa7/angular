@@ -1,0 +1,35 @@
+<div class="user-card-wrapper">
+  <div class="card-header">
+    <div class="avatar-circle">
+      <span>{{ user.name.charAt(0).toUpperCase() }}</span>
+    </div>
+    <div class="user-info">
+      <h3 class="name">{{ user.name }}</h3>
+      <p class="role">{{ user.role }}</p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="stat">
+      <span class="stat-label"><strong>Department</strong></span>
+      <span class="stat-value">{{ user.department }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label"><strong>Email</strong></span>
+      <span class="stat-value">{{ user.email }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label"><strong>Status</strong></span>
+      @if (user.status === 'Active') {
+        <span class="status-badge active">{{ user.status }}</span>
+      } @else {
+        <span class="status-badge inactive">{{ user.status }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn-remove" [value]="user.id" (click)="deleteUser()">Remove User</button>
+    <button class="btn-remove" [value]="user.id" (click)="editMember()">Edit Member</button>
+  </div>
+</div>

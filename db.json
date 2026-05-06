@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "id": "7r4h3fni8uj",
+      "name": "Khushal Chandpa",
+      "email": "khushal.c@techroversolutions.com",
+      "role": "Full Stack Developer",
+      "department": "Engineering",
+      "status": "Active"
+    },
+    {
+      "id": "a1b2c3d4e5f",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@techroversolutions.com",
+      "role": "Frontend Developer",
+      "department": "Engineering",
+      "status": "Active"
+    },
+    {
+      "id": "h7i8j9k0l1m",
+      "name": "Priya Patel",
+      "email": "priya.patel@techroversolutions.com",
+      "role": "UI/UX Designer",
+      "department": "Design",
+      "status": "Active"
+    },
+    {
+      "id": "o3p4q5r6s7t",
+      "name": "Rohan Desai",
+      "email": "rohan.desai@techroversolutions.com",
+      "role": "Product Manager",
+      "department": "Product",
+      "status": "Inactive"
+    },
+    {
+      "id": "v9w0x1y2z3a",
+      "name": "Ananya Singh",
+      "email": "ananya.singh@techroversolutions.com",
+      "role": "QA Engineer",
+      "department": "Engineering",
+      "status": "Active"
+    },
+    {
+      "id": "c5d6e7f8g9h",
+      "name": "Vikram Reddy",
+      "email": "vikram.reddy@techroversolutions.com",
+      "role": "DevOps Engineer",
+      "department": "Engineering",
+      "status": "Inactive"
+    },
+    {
+      "id": "j1k2l3m4n5o",
+      "name": "Neha Gupta",
+      "email": "neha.gupta@techroversolutions.com",
+      "role": "Marketing Specialist",
+      "department": "Marketing",
+      "status": "Active"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

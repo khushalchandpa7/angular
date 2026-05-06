@@ -36,6 +36,20 @@ import { PageNotFound } from './Routing/page-not-found/page-not-found';
 // import { TeamUser } from './Routing/DataRouting/team-user/team-user';
 
 export const routes: Routes = [
+  {
+    path: 'all-users',
+    loadComponent: () =>
+      import('./Practice Questions/InputOutput/components/dashboard/dashboard').then(
+        (c) => c.Dashboard,
+      ),
+    title: 'User Dashboard',
+  },
+
+  // {
+  //   path: 'users',
+  //   loadComponent: () => import('./Practice Questions/components/users/users').then((c) => c.Users),
+  //   title: 'All Users',
+  // },
   // {
   //   path: 'products',
   //   loadComponent: () => import('./Practice Questions/products/products').then((c) => c.TodoList),

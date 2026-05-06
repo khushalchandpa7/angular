@@ -1,1 +1,48 @@
-<p>users works!</p>
+<div class="form-container">
+  <h2>User Information</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="addUser()" action="#" method="POST">
+    <div class="form-group">
+      <label for="userId">User ID</label>
+      <input
+        formControlName="id"
+        type="text"
+        id="userId"
+        name="userId"
+        placeholder="Enter User ID"
+      />
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="userName">Name</label>
+      <input
+        formControlName="name"
+        type="text"
+        id="userName"
+        name="userName"
+        placeholder="Enter Full Name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="userEmail">Email</label>
+      <input
+        formControlName="email"
+        type="text"
+        id="userEmail"
+        name="userEmail"
+        placeholder="Enter Email Address"
+      />
+    </div> -->
+
+    <button type="submit">Get User</button>
+  </form>
+</div>
+
+<div *ngIf="fetchUsers; else loading">
+  <h1>User: {{ fetchUsers.name }}</h1>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
