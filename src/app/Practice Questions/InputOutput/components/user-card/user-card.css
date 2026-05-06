@@ -101,6 +101,8 @@
   background-color: #f9fafb;
   border-top: 1px solid #f3f4f6;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -119,4 +121,26 @@
 .btn-remove:hover {
   background-color: #fef2f2;
   border-color: #ef4444;
+}
+
+.btn-edit {
+  width: 100%;
+  padding: 8px 14px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-edit:hover {
+  background-color: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.btn-edit:active {
+  transform: scale(0.98);
 }

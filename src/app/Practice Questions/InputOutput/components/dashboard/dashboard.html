@@ -101,10 +101,10 @@
     </div>
   </div>
 </ng-container>
-@if (showSuccessMessage()) {
+@if (showAddUserSuccessMessage()) {
   <div class="success-message-container">
     <div class="success-card">
-      <span class="success-icon">🎉</span>
+      <span class="success-icon">🎊</span>
       <h2>Congrats!</h2>
       <p>Member Successfully Added</p>
     </div>
@@ -184,6 +184,15 @@
     </div>
   </div>
 </ng-container>
+@if (showEditUserSuccessMessage()) {
+  <div class="success-message-container">
+    <div class="success-card">
+      <span class="success-icon">🎊</span>
+      <h2>Congrats!</h2>
+      <p>Member Successfully Edited</p>
+    </div>
+  </div>
+}
 
 <div class="dashboard-layout">
   <header class="dashboard-header">
@@ -191,12 +200,10 @@
       <h1>Team Dashboard</h1>
       <p>Manage your team members and their roles.</p>
     </div>
-
     <div class="btns">
       <button class="btn-primary" (click)="openAddModal()">+ Add Member</button>
     </div>
   </header>
-
   <main class="dashboard-content">
     <div class="user-grid">
       @for (user of users(); track user.id) {

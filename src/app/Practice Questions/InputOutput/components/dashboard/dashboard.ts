@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit, Output, signal } from '@angular/core';
+import { Component, signal, inject, OnInit, OnDestroy } from '@angular/core';
 import { UserCard } from '../user-card/user-card';
 import { UserService } from '../../service/user-service';
 import { User } from '../../module/user-module';
@@ -18,7 +18,8 @@ export class Dashboard implements OnInit {
   isAddUserModalOpen = signal(false);
   isEditUserModalOpen = signal(false);
   editingMemberId = signal<string>('');
-  showSuccessMessage = signal(false);
+  showAddUserSuccessMessage = signal(false);
+  showEditUserSuccessMessage = signal(false);
 
   addMemberForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -34,33 +35,33 @@ export class Dashboard implements OnInit {
     department: new FormControl('', [Validators.required]),
   });
 
-  ngOnInit() {
-    this.fetchUsers();
+  ngOnInit(): void {
+    // this.fetchUsers();
   }
 
-  openAddModal() {
+  openAddModal(): void {
     this.isAddUserModalOpen.set(true);
   }
 
-  closeAddModal() {
+  closeAddModal(): void {
     this.isAddUserModalOpen.set(false);
   }
 
-  openEditModal() {
+  openEditModal(): void {
     this.isEditUserModalOpen.set(true);
   }
 
-  closeEditModal() {
+  closeEditModal(): void {
     this.isEditUserModalOpen.set(false);
   }
 
-  fetchUsers() {
+  fetchUsers(): void {
     this.userService.getUsers().subscribe({
       next: (users) => this.users.set(users),
     });
   }
 
-  deleteUserById(memberId: string) {
+  deleteUserById(memberId: string): void {
     this.userService.deleteUserById(memberId).subscribe({
       next: () => {
         const updatedUsers = this.users().filter((user) => user.id !== memberId);
@@ -69,7 +70,7 @@ export class Dashboard implements OnInit {
     });
   }
 
-  handleSaveMember() {
+  handleSaveMember(): void {
     this.openAddModal();
     const newUserPayload = {
       name: this.addMemberForm.value.name!,
@@ -83,31 +84,31 @@ export class Dashboard implements OnInit {
         next: (user) => this.users.update((users) => [...users, user]),
       });
       this.addMemberForm.reset();
-      this.closeAddModal();
     }
+    this.closeAddModal();
     confetti({
       particleCount: 250,
       spread: 100,
       origin: { y: 0.5 },
       colors: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'],
     });
-    this.showSuccessMessage.set(true);
+    this.showAddUserSuccessMessage.set(true);
     setTimeout(() => {
-      this.showSuccessMessage.set(false);
-    }, 3000);
+      this.showAddUserSuccessMessage.set(false);
+    }, 2700);
   }
 
-  handleAddUserCancel() {
+  handleAddUserCancel(): void {
     this.addMemberForm.reset();
     this.closeAddModal();
   }
 
-  handleEditUserCancel() {
+  handleEditUserCancel(): void {
     this.editMemberForm.reset();
     this.closeEditModal();
   }
 
-  handleEditMember() {
+  handleEditMember(): void {
     const updatedPayload = {
       name: this.editMemberForm.value.name!,
       email: this.editMemberForm.value.email!,
@@ -116,20 +117,28 @@ export class Dashboard implements OnInit {
       status: 'Active',
     };
     this.userService.updateUserById(this.editingMemberId(), updatedPayload).subscribe({
-      next: (updatedData) => {
-        // this.users.update((fetchedUser) => {
-        //   return this.fetchUsers.filter((user) => {
-        //     if (user.id === updatedData.id) {
-        //     }
-        //   });
-        // });
-        console.log(updatedData);
+      next: (updatedMember) => {
+        this.users.update((updatedMembers) => {
+          return updatedMembers.map((member) => {
+            return member.id === this.editingMemberId() ? updatedMember : member;
+          });
+        });
       },
     });
-    // this.closeEditModal();
+    this.closeEditModal();
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { x: 0.5 },
+      colors: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'],
+    });
+    this.showEditUserSuccessMessage.set(true);
+    setTimeout(() => {
+      this.showEditUserSuccessMessage.set(false);
+    }, 2700);
   }
 
-  editMember(memberId: string) {
+  editMember(memberId: string): void {
     this.editingMemberId.set(memberId);
     this.openEditModal();
     this.userService.getUserById(memberId).subscribe({
@@ -142,6 +151,6 @@ export class Dashboard implements OnInit {
         });
       },
     });
-    console.log(memberId);
+    // console.log(memberId);
   }
 }

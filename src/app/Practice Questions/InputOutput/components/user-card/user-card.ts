@@ -13,11 +13,11 @@ export class UserCard {
   @Output() deleteCurrUser = new EventEmitter<string>();
   @Output() editCurrMember = new EventEmitter<string>();
 
-  deleteUser() {
+  deleteUser(): void {
     this.deleteCurrUser.emit(this.user.id);
   }
 
-  editMember() {
+  editMember(): void {
     this.editCurrMember.emit(this.user.id);
   }
 }

@@ -44,6 +44,11 @@ export const routes: Routes = [
       ),
     title: 'User Dashboard',
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'all-users',
+  //   pathMatch: 'full',
+  // },
 
   // {
   //   path: 'users',
@@ -181,5 +186,10 @@ export const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   // /* Wild Card Route */
-  { path: '**', component: PageNotFound },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./Routing/page-not-found/page-not-found').then((c) => c.PageNotFound),
+    title: 'Page Not Found',
+  },
 ];
