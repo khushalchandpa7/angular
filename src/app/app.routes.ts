@@ -37,6 +37,11 @@ import { PageNotFound } from './Routing/page-not-found/page-not-found';
 
 export const routes: Routes = [
   {
+    path: '',
+    loadComponent: () => import('./To-Do-List(Mini-Project)/to-do-list').then((c) => c.ToDoList),
+    title: 'To-Do List',
+  },
+  {
     path: 'all-users',
     loadComponent: () =>
       import('./Practice Questions/InputOutput/components/dashboard/dashboard').then(
@@ -185,7 +190,7 @@ export const routes: Routes = [
   // { path: 'page3', component: Page3 },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // /* Wild Card Route */
+  /* Wild Card Route */
   {
     path: '**',
     loadComponent: () =>

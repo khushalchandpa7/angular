@@ -16,7 +16,6 @@ import { Component, signal } from '@angular/core';
 // import { TwoWayDataBinding } from './Components/two-way-data-binding/two-way-data-binding';
 // import { SignalSetterGetter } from './Components/signal-setter-getter/signal-setter-getter';
 // import { Outer } from './Components/input-property/outer/outer';
-// import { ToDoList } from './To-Do-List/to-do-list';
 // import { Directive } from './Components/directive/directive';
 // import { UserDashboard } from './Dashboard/user-dashboard/user-dashboard';
 // import { GreetingUser } from './ChildToParent/greeting-user/greeting-user';
@@ -31,13 +30,14 @@ import { Component, signal } from '@angular/core';
 // import { Form } from './Components/form/form';
 // import { RouterOutlet } from '@angular/router';
 // import { NgContainer } from './Practice Questions/components/ng-container/ng-container';
-import { Dashboard } from './Practice Questions/InputOutput/components/dashboard/dashboard';
+// import { Dashboard } from './Practice Questions/InputOutput/components/dashboard/dashboard';
+import { ToDoList } from './To-Do-List(Mini-Project)/to-do-list';
 
 @Component({
   selector: 'app-root',
   // imports: [NgContainer],
   // imports: [RouterOutlet],
-  imports: [Dashboard],
+  imports: [ToDoList],
   // imports: [ReactiveForms],
   // imports: [RouterOutlet],
   // imports: [Outer, VideoPlayer, Calculator, ForLoop, Parent, Profile, ThemeToggler, User, Events],
