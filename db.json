@@ -10,7 +10,7 @@
     },
     {
       "name": "Aarav Shetty",
-      "email": "aarav.sharma@techroversolutions.com",
+      "email": "aarav.s@techroversolutions.com",
       "role": "Frontend Developer",
       "department": "Engineering",
       "status": "Active",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Priya Patel",
-      "email": "priya.patel@techroversolutions.com",
+      "email": "priya.p@techroversolutions.com",
       "role": "UI/UX Designer",
       "department": "Design",
       "status": "Active",
@@ -26,7 +26,7 @@
     },
     {
       "name": "Rohan Desai",
-      "email": "rohan.desai@techroversolutions.com",
+      "email": "rohan.d@techroversolutions.com",
       "role": "Product Manager",
       "department": "Product",
       "status": "Active",
@@ -35,14 +35,14 @@
     {
       "id": "v9w0x1y2z3a",
       "name": "Ananya Singh",
-      "email": "ananya.singh@techroversolutions.com",
+      "email": "ananya.s@techroversolutions.com",
       "role": "QA Engineer",
       "department": "Engineering",
       "status": "Active"
     },
     {
       "name": "Vikram Reddy",
-      "email": "vikram.reddy@techroversolutions.com",
+      "email": "vikram.r@techroversolutions.com",
       "role": "DevOps Engineer",
       "department": "Engineering",
       "status": "Active",
@@ -51,7 +51,7 @@
     {
       "id": "j1k2l3m4n5o",
       "name": "Neha Gupta",
-      "email": "neha.gupta@techroversolutions.com",
+      "email": "neha.g@techroversolutions.com",
       "role": "Marketing Specialist",
       "department": "Marketing",
       "status": "Active"

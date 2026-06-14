@@ -1,4 +1,35 @@
-<ng-container *ngIf="isAddUserModalOpen()">
+<div class="dashboard-layout">
+  <header class="dashboard-header">
+    <div class="header-titles">
+      <h1>Team Dashboard</h1>
+      <p>Manage your team members and their roles.</p>
+    </div>
+    <div class="btns">
+      <button class="btn-primary" (click)="openAddModal(addMemeberModal)">+ Add Member</button>
+    </div>
+  </header>
+  <!-- <main class="dashboard-content">
+    <div class="user-grid">
+      @for (user of users(); track user.id) {
+        <app-user-card
+          [user]="user"
+          (deleteCurrUser)="deleteUserById($event)"
+          (editCurrMember)="editMember($event)"
+        ></app-user-card>
+      } @empty {
+        <span class="no-users">No Users Found!</span>
+      }
+    </div>
+  </main> -->
+</div>
+<ng-template #addMemeberModal>
+  <div class="hello-modal-header">
+    <app-user-card></app-user-card>
+    <button class="modal-close-btn" (click)="closeModal()">&times;</button>
+  </div>
+</ng-template>
+
+<!-- <ng-container *ngIf="isAddUserModalOpen()">
   <div class="modal-backdrop">
     <div class="modal-container">
       <div class="modal-header">
@@ -11,10 +42,9 @@
           <div class="form-group">
             <label for="name">Full Name</label>
             <input
-              #name
               formControlName="name"
               type="text"
-              id="name"
+              id="edit-name"
               placeholder="e.g. Jane Doe"
               class="form-control"
             />
@@ -33,7 +63,7 @@
             <input
               formControlName="email"
               type="email"
-              id="email"
+              id="edit-email"
               placeholder="jane@example.com"
               class="form-control"
             />
@@ -57,7 +87,7 @@
               <input
                 formControlName="role"
                 type="text"
-                id="role"
+                id="edit-role"
                 placeholder="e.g. Senior Developer"
                 class="form-control"
               />
@@ -126,7 +156,7 @@
             <input
               type="text"
               [value]="editMemberForm.value.name"
-              id="name"
+              id="edit-name"
               placeholder="e.g. Jane Doe"
               class="form-control"
               formControlName="name"
@@ -138,7 +168,7 @@
             <input
               type="email"
               [value]="editMemberForm.value.email"
-              id="email"
+              id="edit-email"
               placeholder="jane@example.com"
               class="form-control"
               formControlName="email"
@@ -151,7 +181,7 @@
               <input
                 type="text"
                 [value]="editMemberForm.value.role"
-                id="role"
+                id="edit-role"
                 placeholder="e.g. Senior Developer"
                 class="form-control"
                 formControlName="role"
@@ -161,7 +191,7 @@
             <div class="form-group">
               <label for="department">Department</label>
               <select
-                id="department"
+                id="edit-department"
                 [value]="editMemberForm.value.department"
                 class="form-control"
                 formControlName="department"
@@ -192,29 +222,4 @@
       <p>Member Successfully Edited</p>
     </div>
   </div>
-}
-
-<div class="dashboard-layout">
-  <header class="dashboard-header">
-    <div class="header-titles">
-      <h1>Team Dashboard</h1>
-      <p>Manage your team members and their roles.</p>
-    </div>
-    <div class="btns">
-      <button class="btn-primary" (click)="openAddModal()">+ Add Member</button>
-    </div>
-  </header>
-  <main class="dashboard-content">
-    <div class="user-grid">
-      @for (user of users(); track user.id) {
-        <app-user-card
-          [user]="user"
-          (deleteCurrUser)="deleteUserById($event)"
-          (editCurrMember)="editMember($event)"
-        ></app-user-card>
-      } @empty {
-        <span class="no-users">No Users Found!</span>
-      }
-    </div>
-  </main>
-</div>
+} -->

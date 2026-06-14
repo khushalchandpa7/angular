@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { User } from '../module/user-module';
 import { Observable } from 'rxjs';
+import { configuration } from '../configuration';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl: string = 'http://localhost:3000/users';
+  private apiUrl = configuration;
   private http = inject(HttpClient);
 
   // get request

@@ -19,6 +19,7 @@
     "@angular/router": "^21.2.0",
     "canvas-confetti": "^1.9.4",
     "crypto-js": "^4.2.0",
+    "ngx-bootstrap": "^21.2.0",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.2.4",
     "tslib": "^2.3.0",

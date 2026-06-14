@@ -1,14 +1,16 @@
-import { Component, signal, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, inject, OnInit, TemplateRef } from '@angular/core';
 import { UserCard } from '../user-card/user-card';
 import { UserService } from '../../service/user-service';
 import { User } from '../../module/user-module';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import confetti from 'canvas-confetti';
+import { BrowserModule } from '@angular/platform-browser';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [UserCard, CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, UserCard],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -35,17 +37,32 @@ export class Dashboard implements OnInit {
     department: new FormControl('', [Validators.required]),
   });
 
+  addModalRef?: BsModalRef;
+
+  constructor(private modalService: BsModalService) {}
+
   ngOnInit(): void {
-    // this.fetchUsers();
+    this.fetchUsers();
   }
 
-  openAddModal(): void {
-    this.isAddUserModalOpen.set(true);
+  openAddModal(template: TemplateRef<any>) {
+    this.addModalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered',
+      backdrop: true,
+    });
   }
 
-  closeAddModal(): void {
-    this.isAddUserModalOpen.set(false);
+  closeModal() {
+    this.addModalRef?.hide();
   }
+
+  // openAddModal(): void {
+  //   this.isAddUserModalOpen.set(true);
+  // }
+
+  // closeAddModal(): void {
+  //   this.isAddUserModalOpen.set(false);
+  // }
 
   openEditModal(): void {
     this.isEditUserModalOpen.set(true);
@@ -71,7 +88,11 @@ export class Dashboard implements OnInit {
   }
 
   handleSaveMember(): void {
-    this.openAddModal();
+    if (this.addMemberForm.invalid) {
+      this.addMemberForm.markAllAsTouched();
+      return;
+    }
+    // this.openAddModal();
     const newUserPayload = {
       name: this.addMemberForm.value.name!,
       email: this.addMemberForm.value.email!,
@@ -85,7 +106,7 @@ export class Dashboard implements OnInit {
       });
       this.addMemberForm.reset();
     }
-    this.closeAddModal();
+    // this.closeAddModal();
     confetti({
       particleCount: 250,
       spread: 100,
@@ -100,7 +121,7 @@ export class Dashboard implements OnInit {
 
   handleAddUserCancel(): void {
     this.addMemberForm.reset();
-    this.closeAddModal();
+    // this.closeAddModal();
   }
 
   handleEditUserCancel(): void {
@@ -151,6 +172,5 @@ export class Dashboard implements OnInit {
         });
       },
     });
-    // console.log(memberId);
   }
 }
